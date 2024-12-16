@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger</title>
+    <link rel="shortcut icon" type="image" href="./icon/logo.png">
+
+    <link rel="stylesheet" href="./style.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-expand-md" id="navbar-color">
+        <a class="navbar-brand" href="./home.html" id="logo-color"><i><img src="./icon/logo.png" alt=""></i>Burger</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span><i><img src="./icon/menu.png" alt="" id="menu-color"></i></span>
+        </button>      
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="first">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      
+<main><section id="home" class="container mt-5  main-home">
+    <div class="text-center">
+      <h2 id="greeting">Welcome to Our Restaurant!</h2>
+    </div>
+    <div id="carouselExample" class="carousel slide mt-4" data-bs-ride="carousel">
+      <div class="carousel-inner ">
+        <div class="carousel-item active">
+          <img src="./images/card3.png" class="d-block w-100  image" alt="Image 1">
+        </div>
+        <div class="carousel-item">
+          <img src="./images/background.png  " class="d-block w-100 card image" alt="Image 2">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </section>
+
+  <div class="main-content">
+    <div class="content">
+        <h1>BEST DEAL</h1>
+        <h2>BURGER</h2>
+        <div id="btn1"><button>Order Now</button></div>
+    </div>
+</div>
+</main>
+  
+
+
+
+
+
+<footer id="footer">
+    <div class="container">
+        <div class="row d-flex align-items-center  foot-div">
+            <div class="col-lg-6 text-lg-left text-center">
+                <div class="copyright">
+                    <p>Contact Info: (123) 456-7890 | Location: Main Street, City</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+                    <a href="#" class="scrollto">Home</a>
+                    <a href="#" class="scrollto">Menu</a>
+                    <a href="#" class="scrollto">Contact Us</a>
+                </nav>
+            </div>
+            <div class="foot-copyright">
+                 &copy; Copyright <span class="foot-burger">Burger</span>. All Rights Reserved
+            </div>
+
+        </div>
+    </div>
+</footer>
+    
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Dynamic Greeting
+  const greetings = ["Welcome to Our Restaurant!", "Enjoy Fine Dining!", "Fresh Meals Await!"];
+  let index = 0;
+  setInterval(() => {
+    index = (index + 1) % greetings.length;
+    document.getElementById("greeting").textContent = greetings[index];
+  }, 4000);
+
+  // Contact Form Logic
+  const form = document.getElementById("contactForm");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    document.getElementById("formNotification").textContent = "Form submitted successfully!";
+  });
+
+  // Input transformations
+  form.addEventListener("change", (e) => {
+    if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") {
+      e.target.value = e.target.value.toUpperCase();
+      e.target.style.color = "blue";
+    }
+  });
+
+  // Change meal image on buy button click
+  document.querySelectorAll(".buy-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const card = e.target.closest(".card");
+      card.querySelector("img").src = "https://via.placeholder.com/300/FF0000";
+    });
+  });
+</script>
+</body>
+</html>
